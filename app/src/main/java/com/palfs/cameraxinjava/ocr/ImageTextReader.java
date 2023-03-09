@@ -1,6 +1,7 @@
 package com.palfs.cameraxinjava.ocr;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 
 import com.googlecode.tesseract.android.TessBaseAPI;
 
@@ -24,14 +25,18 @@ public class ImageTextReader {
      * @param language language code i.e. selected by user
      * @return the instance of this class for later use
      */
-    public static ImageTextReader geInstance(String path, String language,int pageSegMode, TessBaseAPI.ProgressNotifier progressNotifier) {
+    public static ImageTextReader geInstance(String path, String language,int pageSegMode) {
         try {
             ImageTextReader imageTextReader=new ImageTextReader();
-            api = new TessBaseAPI(progressNotifier);
+            api = new TessBaseAPI();
+            Log.d("Xdebug_OCR",path);
             imageTextReader.success = api.init(path, language);
+
             api.setPageSegMode(pageSegMode);
+            Log.d("Xdebug_OCR",imageTextReader.success+" "+language);
             return imageTextReader;
         } catch (Exception e) {
+            Log.d("Xdebug_OCR",e.toString()) ;
             return null;
         }
 

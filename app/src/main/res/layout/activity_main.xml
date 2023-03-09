@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EC1414"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -19,14 +20,27 @@
         <androidx.camera.view.PreviewView
             android:id="@+id/previewView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="90" />
+            android:layout_height="51dp"
+            android:layout_weight="90">
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="311dp"
+                android:layout_height="3dp"
+                android:background="#CD1B1B"
+                android:backgroundTintMode="src_in"
+                android:foregroundTint="#FFFFFF"
+                android:translationX="50dp"
+                android:translationY="200dp" />
+
+        </androidx.camera.view.PreviewView>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
+            android:layout_height="23dp"
             android:layout_weight="10"
+            android:background="#F1EBEB"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,18 +48,18 @@
 
             <Button
                 android:id="@+id/bCapture"
-                android:layout_marginStart="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:text="take picture" />
 
             <Button
                 android:id="@+id/bRecord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:layout_marginEnd="10dp"
                 android:text="start recording" />
         </RelativeLayout>
     </LinearLayout>
